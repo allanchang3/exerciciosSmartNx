@@ -1,0 +1,11 @@
+{
+  "name": "smartnx",
+  "version": "1.0.0",
+  "description": "Lista de exercicios e projeto smartnx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Allan Chang",
+  "license": "ISC"
+}
