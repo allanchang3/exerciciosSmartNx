@@ -20,7 +20,6 @@ async function fetchAddress(cep){
         const address = data.logradouro + '/' + data.bairro + ', ' + data.complemento + ', ' + data.localidade+ '/' + data.uf;
 
         console.log(address);
-        console.log(data);
     }
     catch
     {
@@ -29,7 +28,7 @@ async function fetchAddress(cep){
 
 }
 
-const cep = '3605420';
+const cep = '36015420';
 
 fetchAddress(cep)
 
