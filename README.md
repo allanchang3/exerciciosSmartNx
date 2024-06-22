@@ -35,7 +35,7 @@ Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e
    node ex9.js\
    node ex10.js\
    node ex11.js\
-   node ex12.js\
+   node ex12.js
 
 
 # Api SmartNx
@@ -89,7 +89,7 @@ GET /posts/get/id/:id : Retorna um post específico pelo ID.\
 GET /posts/get/email/:email : Retorna os posts de um email X;\
 POST /posts/post : Cria um novo post.\
 PUT /posts/put/:id : Atualiza o conteúdo de um post existente.\
-DELETE /posts/delete/:id: Deleta um post e seus comentários associados.\
+DELETE /posts/delete/:id: Deleta um post e seus comentários associados.
 
 ### Comentários
 
@@ -98,7 +98,7 @@ GET /comments/id/:id : Retorna um comentário específico pelo ID.\
 GET /comments/id_post/:post_id : Retorna os comentários de um post X;\
 POST /comments/post : Cria um novo comentário.\
 PUT /comments/put/:id : Atualiza um comentários existente.\
-DELETE /comments/delete/:id: Deleta um comentário.\
+DELETE /comments/delete/:id: Deleta um comentário.
 
 ### Exemplos de uso:
 
@@ -110,7 +110,7 @@ DELETE /comments/delete/:id: Deleta um comentário.\
       "sobrenome_usuario": "da silva",\
       "email": "fulano@example.com",\
       "conteudo": "Lorem ipsum dolor sit amet"\
-   }\
+   }
 
 **Criação de um Comentário:**
 
@@ -121,6 +121,6 @@ DELETE /comments/delete/:id: Deleta um comentário.\
       "email": "ciclano@example.com",\
       "comentario": "Ótimo post!",\
       "post_id": 1\
-   }\
+   }
 
 
