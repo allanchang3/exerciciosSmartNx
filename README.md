@@ -10,13 +10,15 @@ Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e
 
 ### Como Executar
 
-1. Clone o repositório:
+1.Clone o repositório:
    ```bash
    git clone https://github.com/allanchang3/exerciciosSmartNx.git
+   ```
 
 2.Navegue até o diretório do repositório:
-   
+   ```bash
    cd Exercicios
+   ```
 
 3.Navegue até o diretório do exercício desejado e execute o arquivo com node.
 
@@ -51,16 +53,18 @@ Para executar este projeto localmente, você precisa ter instalado:
 
 ## Instalação
 
-1. Clone o repositório:
+1.Clone o repositório:
 
    ```bash
    git clone https://github.com/allanchang3/exerciciosSmartNx.git
+   ```
 
 2.Instale as dependências:
 
    Navegue até o diretório do projeto e execute o seguinte comando para instalar todas as dependências listadas no package.json:
-
+   ```bash
    npm install
+   ```
 
 3.Configuração do Banco de Dados
 
@@ -70,8 +74,9 @@ Para executar este projeto localmente, você precisa ter instalado:
 ## Execução
 
 Após instalar as dependências e configurar o banco de dados, você pode iniciar o servidor:
-
+   ```bash
    npm start
+   ```
 
 O servidor estará disponível em http://localhost:3000 por padrão.
 
