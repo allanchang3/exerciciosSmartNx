@@ -20,15 +20,15 @@ async function fetchAddress(cep){
         const address = data.logradouro + '/' + data.bairro + ', ' + data.complemento + ', ' + data.localidade+ '/' + data.uf;
 
         console.log(address);
-    }
-    catch
+    }    
+    catch (error)
     {
         console.error('Ocorreu um erro ao obter o endereço: ', error);
     }
 
 }
 
-const cep = '36015420';
+const cep = '36035410';
 
 fetchAddress(cep)
 

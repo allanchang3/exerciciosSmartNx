@@ -22,7 +22,7 @@ class PostController{
             const posts = await PostModel.getPostsByEmail(email);
             res.status(200).json(posts);
         }catch(error){
-            console.error('Erro ao achar posts pelo email:', error);
+            console.error('Erro ao achar os posts pelo email:', error);
             res.status(500).json({error: 'Erro ao buscar os posts do email.'});
         }
 
@@ -35,8 +35,8 @@ class PostController{
             const posts = await PostModel.getPostById(id);
             res.status(200).json(posts);
         }catch(error){
-            console.error('Erro ao achar posts pelo id:', error);
-            res.status(500).json({error: 'Erro ao buscar os posts do id.'});
+            console.error('Erro ao achar o post pelo id:', error);
+            res.status(500).json({error: 'Erro ao buscar o post pelo id.'});
         }
 
     }
@@ -59,7 +59,7 @@ class PostController{
 
         try{
             const result = await PostModel.deletePostById(id);
-            console.log(result);
+            console.log('Post de id: " + result.id +  " apagado com sucesso.');
             res.status(200).json('Post de id: ' + result.id + ' apagado com sucesso.');
         }catch(error){
             console.error('Erro ao apagar o post.', error);
@@ -69,13 +69,13 @@ class PostController{
 
     async editPostById(req, res){
         const id = req.params.id;
-        const {nome_usuario, sobrenome_usuario, email, conteudo} = req.body;
+        const {conteudo} = req.body;
 
         try{
-            const result = await PostModel.editPostById(id, nome_usuario, sobrenome_usuario, email, conteudo);
-            res.status(200).json({message: "Post editado com sucesso!", novo_post: result});
+            const result = await PostModel.editPostById(id, conteudo);
+            res.status(200).json({message: 'Post editado com sucesso!', novo_post: result});
         }catch(error){
-            console.error('Erro ao editar o post o post.', error);
+            console.error('Erro ao editar o post.', error);
             res.status(500).json({error: 'Erro ao editar o post.'});
         }
     }

@@ -13,7 +13,7 @@ class PostModel{
             const result = await db.one(query, values);
 
             return result.id;
-        } catch (error) {
+        }catch (error){
             throw error;
         }
     }
@@ -22,7 +22,8 @@ class PostModel{
 
         try{
             const query = `SELECT * FROM Posts
-                           WHERE email = $1`
+                           WHERE email = $1
+                           ORDER BY data_criacao`
 
             const result = await db.any(query, email)
 
@@ -37,20 +38,21 @@ class PostModel{
             const query = `SELECT * FROM Posts
                            WHERE id = $1`;
 
-            const result = await db.any(query, id);
-            return result;
-        } catch (error) {
+            const post = await db.oneOrNone(query, id);
+            return post;
+        }catch (error){
             throw error;
         }
     }
 
     async getPosts(){
         try{
-            const query = `SELECT * FROM Posts`;
+            const query = `SELECT * FROM Posts
+                           ORDER BY data_criacao`;
 
-            const result = await db.any(query);
-            return result;
-        } catch (error) {
+            const posts = await db.any(query);
+            return posts;
+        }catch (error){
             throw error;
         }
     }
@@ -63,22 +65,32 @@ class PostModel{
 
             const result = await db.oneOrNone(query, id);
             return result;
-        } catch (error) {
+        }catch (error){
             throw error;
         }
     }
 
-    async editPostById(id, nome_usuario, sobrenome_usuario, email, conteudo){
+    async editPostById(id, conteudo){
         try{
             const query = `UPDATE Posts
-                           SET nome_usuario = $2, sobrenome_usuario = $3, email = $4, conteudo = $5
+                           SET conteudo = $2
                            WHERE id = $1
                            RETURNING *`
-            const values = [id, nome_usuario, sobrenome_usuario, email, conteudo];
+            const values = [id, conteudo];
 
             const result = await db.oneOrNone(query,values);
             return result;
-        } catch (error) {
+        }catch (error){
+            throw error;
+        }
+    }
+
+    async verifyPostId(id){
+        try{
+            const query = 'SELECT id FROM Posts WHERE id = $1';
+            const post = await db.oneOrNone(query, id);
+            return post !== null;
+        }catch (error){
             throw error;
         }
     }

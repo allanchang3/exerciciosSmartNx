@@ -7,7 +7,11 @@ const db = require('./database/db');
 
 const PostRoutes = require('./routes/post_routes');
 
-server.use('/posts', PostRoutes)
+const CommentRoutes = require('./routes/comment_routes');
+
+server.use('/posts', PostRoutes);
+
+server.use('/comments', CommentRoutes);
 
 server.listen(3000, ()=>{
     console.log('API ONLINE');
